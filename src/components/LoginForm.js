@@ -31,8 +31,8 @@ class Loginform extends Component {
 
         if(error){
             return(
-                <View>
-                    <Text>{error}</Text>
+                <View style = {{backgroundColor : 'white'}}>
+                    <Text style={styles.errorTextStyle}>{error}</Text>
                 </View>
             )
         }
@@ -65,6 +65,13 @@ class Loginform extends Component {
             </Card>
             
         );
+    }
+}
+const styles = {
+    errorTextStyle : {
+        fontSize : 20,
+        alignSelf: 'center',
+        color : 'red'
     }
 }
 const mapStateToProps = (state, ownProps)=>{
