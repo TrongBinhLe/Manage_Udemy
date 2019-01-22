@@ -3,9 +3,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import {Provider} from 'react-redux'; 
 import ReduxThunk from 'redux-thunk';
 import {createStore,applyMiddleware} from 'redux';
-import combineReducers from './src/reducers'
-import Loginform from './src/components/LoginForm'
-import firebase from 'firebase'
+import combineReducers from './src/reducers';
+import Loginform from './src/components/LoginForm';
+import Router from './src/components/Router'
+import firebase from 'firebase';
 
 export default class App extends React.Component {
   componentWillMount(){
@@ -22,11 +23,12 @@ export default class App extends React.Component {
   }
 
   render() { 
+    const {container} = styles
     const store = createStore(combineReducers,{},applyMiddleware(ReduxThunk))
     return (
       <Provider store={store}>
-        <View>
-          <Loginform/>
+        <View style = {{flex : 1}}>
+          <Router/>
         </View>
       </Provider>
     );
@@ -36,8 +38,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
-  },
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  }
 });

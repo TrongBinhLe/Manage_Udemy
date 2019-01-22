@@ -6,7 +6,8 @@ import {
     Card,
     CardSection,
     Input,
-    Button  
+    Button,
+    Spinner
 } from './common';
 
 class Loginform extends Component {
@@ -28,7 +29,6 @@ class Loginform extends Component {
 
     renderError = ()=>{
         const {error} = this.props
-
         if(error){
             return(
                 <View style = {{backgroundColor : 'white'}}>
@@ -38,8 +38,21 @@ class Loginform extends Component {
         }
 
     }
+    renderButton = () =>{
+        if(this.props.loading){
+            return(
+                <Spinner size = 'large' />
+            )
+        }else {
+            return(
+                <Button onPress = {this.onButtonPress}>Login</Button>
+            )
+        }
+    }
     render(){
+        const {container} = styles
         return(
+        <View style = {container}>
             <Card>
                 <CardSection>
                     <Input
@@ -58,16 +71,21 @@ class Loginform extends Component {
                         value = {this.props.password}
                     />                   
                 </CardSection>
-                 {this.renderError()}   
+                    {this.renderError()}   
                 <CardSection>
-                    <Button onPress = {this.onButtonPress}>Login</Button>
+                    {this.renderButton()}
                 </CardSection>
             </Card>
+        </View>
             
         );
     }
 }
 const styles = {
+    container :{
+        flex: 1,
+        marginTop: 60,
+    },
     errorTextStyle : {
         fontSize : 20,
         alignSelf: 'center',
@@ -78,7 +96,8 @@ const mapStateToProps = (state, ownProps)=>{
     return {
         email : state.auth.email,
         password : state.auth.password,
-        error : state.auth.error
+        error : state.auth.error,
+        loading : state.auth.loading
     }
 }
 
