@@ -9,9 +9,9 @@ const RouterComponent = ()=>{
     return(
         <Router>
             <Scene key = 'root'>
-                {/* <Scene key = 'auth'>
+                <Scene key = 'auth'>
                     <Scene key = 'login' component = {LoginForm} title = 'Please Login' ></Scene>
-                </Scene> */}
+                </Scene>
                 <Scene key = 'main'>
                     <Scene
                       rightTitle = 'Add'

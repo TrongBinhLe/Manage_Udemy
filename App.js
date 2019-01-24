@@ -25,6 +25,7 @@ export default class App extends React.Component {
   render() { 
     const {container} = styles
     const store = createStore(combineReducers,{},applyMiddleware(ReduxThunk))
+  
     return (
       <Provider store={store}>
         <View style = {{flex : 1}}>

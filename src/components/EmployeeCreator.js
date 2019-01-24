@@ -16,7 +16,7 @@ class EmployeeCreactor extends Component {
     render(){
       const {container} = styles
         return(
-          <View style = {container}>
+          <View style = {container}> 
             <Card>
               <CardSection>
                 <Input 
