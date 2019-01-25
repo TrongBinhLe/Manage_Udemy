@@ -36,8 +36,8 @@ class Loginform extends Component {
                 </View>
             )
         }
-
     }
+    
     renderButton = () =>{
         if(this.props.loading){
             return(

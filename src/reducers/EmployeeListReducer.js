@@ -3,13 +3,12 @@ import {
 } from '../actions/type'
 
 const INIT_STATE = {
-
 }
 
 export default (state = INIT_STATE, action) => {
     switch (action.type){
-				case EMPLOYEES_FETCH_SUCCESS:
-					console.log(action.type)
+        case EMPLOYEES_FETCH_SUCCESS:
+          console.log(action.payload);
 					return action.payload
         default :
           return state;

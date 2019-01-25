@@ -18,7 +18,7 @@ const RouterComponent = ()=>{
                       onRight = {()=>{Actions.creatEmployee()}}
                       key = 'employeeList' 
                       component = {EmployeeList} 
-                      title = 'Create Employee' 
+                      title = 'Employee List' 
                       initial = {true}
                     />
                     <Scene 
