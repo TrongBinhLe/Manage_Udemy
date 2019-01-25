@@ -4,8 +4,8 @@ import { CardSection } from "./common";
 import {Actions} from 'react-native-router-flux';
 
 class ListItem extends Component {
-    onRowPress(){
-      Actions.creatEmployee();
+    onRowPress = ()=> {
+      Actions.creatEmployee({employee: this.props.employee});
     }
     render(){
         const {name} = this.props.employee;

@@ -14,6 +14,7 @@ class EmployeeCreactor extends Component {
     this.props.employeeCreate({name, phone, position : position || 'Staff' , shift : shift  || 'Monday' })
   }
     render(){
+      console.log(this.props.employee)
       const {container} = styles
         return(
           <View style = {container}> 
