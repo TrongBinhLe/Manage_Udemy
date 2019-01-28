@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 7200,
-  "expoServerNgrokUrl": "https://3e-4mj.zorobk.manage-udemy.exp.direct",
-  "packagerNgrokUrl": "https://packager.3e-4mj.zorobk.manage-udemy.exp.direct",
-  "ngrokPid": 7176
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
