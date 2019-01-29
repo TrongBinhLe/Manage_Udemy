@@ -3,13 +3,14 @@ import {Actions} from 'react-native-router-flux';
 import {
   EMPLOYEE_UPDATE,
   EMPLOYEE_CREATE,
-  EMPLOYEES_FETCH_SUCCESS
+  EMPLOYEES_FETCH_SUCCESS,
+  EMPLOYEE_SAVESUCCESS
 } from './type';
 
-export const employeeUpdate = ({ prop, value})=>{
+export const employeeUpdate = ({prop, value})=>{
  return {
    type : EMPLOYEE_UPDATE,
-   payload : { prop, value}  
+   payload : {prop, value}  
  };
 }
 
@@ -41,6 +42,36 @@ export const employeeFetch = () =>{
           payload : snapshot.val()
         });
       }) 
+    }
+  );
+}
+
+export const employeeSave = ({name, phone, position, shift, uid}) => {
+  const { currentUser } = firebase.auth()
+  return(
+    ()=>{
+      firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+      .set({name, phone, position, shift})
+      .then(()=> console.log('saved !!!'))
+    }
+  );
+}
+
+export const employeeDelete = ({uid}) => {
+  const { currentUser } = firebase.auth();
+  return(
+    () => {
+      firebase.database().ref(`/users/${currentUser.uid}/employees/${uid}`)
+        .remove()
+        .then(console.log('delete ok'))
+    }
+  )
+}
+
+export const saveSuccess = ()=>{
+  return(
+    {
+      type : EMPLOYEE_SAVESUCCESS
     }
   );
 }

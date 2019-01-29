@@ -5,8 +5,9 @@ import {  Card,
           Input,
           Button
         }from './common';
+import EmployeeForm from './EmployeeForm';
 import { connect } from 'react-redux';
-import { employeeUpdate, employeeCreate } from '../actions'
+import { employeeUpdate, employeeCreate } from '../actions';
 
 class EmployeeCreactor extends Component {
   onButtonPress = () => {
@@ -14,11 +15,12 @@ class EmployeeCreactor extends Component {
     this.props.employeeCreate({name, phone, position : position || 'Staff' , shift : shift  || 'Monday' })
   }
     render(){
-      console.log(this.props.employee)
+    
       const {container} = styles
         return(
           <View style = {container}> 
             <Card>
+              <EmployeeForm/>
               <CardSection>
                 <Button onPress = {this.onButtonPress}>Create</Button>
               </CardSection>  

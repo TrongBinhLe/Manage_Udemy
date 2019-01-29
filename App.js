@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,YellowBox  } from 'react-native';
 import {Provider} from 'react-redux'; 
 import ReduxThunk from 'redux-thunk';
 import {createStore,applyMiddleware} from 'redux';
@@ -7,6 +7,8 @@ import combineReducers from './src/reducers';
 import Loginform from './src/components/LoginForm';
 import Router from './src/components/Router'
 import firebase from 'firebase';
+
+YellowBox.ignoreWarnings(['Remote debugger', 'Setting a timer']);
 
 export default class App extends React.Component {
   componentWillMount(){

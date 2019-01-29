@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Picker} from 'react-native';
+import {View, Picker, Text} from 'react-native';
 import { CardSection, Input } from './common'
 import { connect } from 'react-redux';
 import { employeeUpdate, } from '../actions'
@@ -55,7 +55,6 @@ class EmployeeForm extends Component {
                 </Picker>  
               </CardSection>
             </View>  
-
         );
     }
 }
@@ -74,11 +73,11 @@ const styles = {
 
 const mapStateToProps = (state, ownProps) => {
 const { name, phone, position, shift } = state.createEmployee;
-return {
-  name : name,
-  phone : phone,
-  position : position,
-  shift : shift,
+  return {
+    name : name,
+    phone : phone,
+    position : position,
+    shift : shift,
+  }
 }
-}
-export default cEmployeeForm;
+export default connect(mapStateToProps,{employeeUpdate})(EmployeeForm);
