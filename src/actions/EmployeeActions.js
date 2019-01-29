@@ -4,7 +4,7 @@ import {
   EMPLOYEE_UPDATE,
   EMPLOYEE_CREATE,
   EMPLOYEES_FETCH_SUCCESS,
-  EMPLOYEE_SAVESUCCESS
+  EMPLOYEE_RESET_FORM
 } from './type';
 
 export const employeeUpdate = ({prop, value})=>{
@@ -68,10 +68,10 @@ export const employeeDelete = ({uid}) => {
   )
 }
 
-export const saveSuccess = ()=>{
+export const resetAttitude = ()=>{
   return(
     {
-      type : EMPLOYEE_SAVESUCCESS
+      type : EMPLOYEE_RESET_FORM
     }
   );
 }

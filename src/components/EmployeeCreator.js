@@ -15,10 +15,9 @@ class EmployeeCreactor extends Component {
     this.props.employeeCreate({name, phone, position : position || 'Staff' , shift : shift  || 'Monday' })
   }
     render(){
-    
-      const {container} = styles
+      const { container } = styles
         return(
-          <View style = {container}> 
+          <View style = { container }> 
             <Card>
               <EmployeeForm/>
               <CardSection>

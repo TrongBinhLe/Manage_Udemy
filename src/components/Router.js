@@ -6,15 +6,15 @@ import Creator from './EmployeeCreator'
 import LoginForm from './LoginForm';
 import EmployeeCreator from './EmployeeCreator';
 import EmployeeEdit from './EmployeeEdit';
-import { saveSuccess } from '../actions'
+import { resetAttitude } from '../actions'
 
 
 const RouterComponent = ()=>{
     
-    // onRightButtonAdd = () =>{
-    //     this.props.saveSuccess();
-    //     Actions.creatEmployee({type : 'reset'});
-    // }
+    onRightButtonAdd = ()=>{
+        this.props.resetAttitude();
+        Actions.creatEmployee({type : 'reset'});
+    }
     
     return(
         <Router>
@@ -25,7 +25,7 @@ const RouterComponent = ()=>{
                 <Scene key = 'main'>
                     <Scene
                       rightTitle = 'Add'
-                      onRight = {()=> Actions.creatEmployee()}
+                      onRight = {()=>Actions.creatEmployee()}
                       key = 'employeeList' 
                       component = {EmployeeList} 
                       title = 'Employee List' 
@@ -48,4 +48,4 @@ const RouterComponent = ()=>{
     );
 }
 
-export default connect(null,{saveSuccess})(RouterComponent);
+export default connect(null,{ resetAttitude })(RouterComponent);

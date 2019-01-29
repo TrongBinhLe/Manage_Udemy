@@ -1,7 +1,7 @@
 import { 
     EMPLOYEE_UPDATE,
     EMPLOYEE_CREATE,
-    EMPLOYEE_SAVESUCCESS,
+    EMPLOYEE_RESET_FORM,
 
 } from '../actions/type'
 
@@ -25,7 +25,7 @@ export default (state = INIT_STATE, action) => {
             };
         case EMPLOYEE_CREATE:
             return {...INIT_STATE , loading : true};
-        case EMPLOYEE_SAVESUCCESS:
+        case EMPLOYEE_RESET_FORM:
             return INIT_STATE;
         default:
             return state;

@@ -3,7 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerNgrokUrl": "https://3e-4mj.zorobk.manage-udemy.exp.direct",
+  "packagerNgrokUrl": "https://packager.3e-4mj.zorobk.manage-udemy.exp.direct",
+  "ngrokPid": 7548
 }
