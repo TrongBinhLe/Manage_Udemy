@@ -4,7 +4,7 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Communications from 'react-native-communications';
 import { View } from 'react-native';
-import { Card, CardSection, Button,Confirm } from './common';
+import { Card, CardSection, Button, Confirm } from './common';
 import Employee from './EmployeeForm';
 import { employeeUpdate, employeeSave, employeeDelete, resetAttitude } from '../actions';
 
@@ -31,7 +31,13 @@ class EmployeeEdit extends Component {
         const { phone, shift } = this.props
         Communications.text(phone,`Your upcoming shift is on ${shift}`)
     }
-
+    onAccept(){
+        this.props.employeeDelete({uid: this.props.employee.uid});
+        this.props.resetAttitude();        
+    }
+    onDecLine(){
+        this.setState({showModal: false})
+    }
     render(){
         const {container} = styles;
         return(
@@ -43,29 +49,28 @@ class EmployeeEdit extends Component {
                     </CardSection>
                     <CardSection>
                         <Button onPress = {()=> this.setState({showModal : ! this.state.showModal})}>Fire Employee</Button>
-                    </CardSection>
+                    </CardSection>  
                     <CardSection>
                         <Button onPress = {this.onButtonTextSchedule}>Text Schedule</Button>
                     </CardSection>
                     <Confirm 
                         visible = {this.state.showModal}
+                        onAccept = {this.onAccept.bind(this)}
+                        onDecLine = {this.onDecLine.bind(this)}
                     >
                         Are you sure you want to delete this?
                     </Confirm>
-                    
                 </Card>
               </View>  
         );
     }
 }
-
 const styles = {
     container : {
         flex: 1,
         paddingTop: 60,
     }
 }
-
 const mapStateToProps = (state, ownProps) => {
     const {name ,phone, position, shift} = state.createEmployee
     return {

@@ -9,7 +9,7 @@ const Confirm = ({ children, visible, onAccept, onDecLine })=>{
  return(
     <Modal
         visible = {visible}
-        transparent
+        transparent = {true}
         animationType = 'slide'
         onRequestClose = {()=>{}}
     >
@@ -17,7 +17,6 @@ const Confirm = ({ children, visible, onAccept, onDecLine })=>{
             <CardSection style = {carSectionStyle}>
                 <Text>{children}</Text>
             </CardSection>
-
             <CardSection style = {carSectionStyle}>
                 <Button onPress = {onAccept}>
                     Yes
@@ -37,7 +36,7 @@ const styles = {
     },
     textStyle : {
         flex : 1,
-        fontSize : 18,
+        fontSize : 30,
         textAlign : 'center',
         lineHeight : 40,
     },
@@ -49,4 +48,4 @@ const styles = {
     }
 }
 
-export {Confirm}
+export { Confirm } 

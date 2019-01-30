@@ -6,7 +6,6 @@ import {
 } from '../actions/type'
 
 const INIT_STATE = {
-
     name : '',
     phone : '',
     position : '',
@@ -16,7 +15,6 @@ const INIT_STATE = {
 };
 
 export default (state = INIT_STATE, action) => {
-
     switch(action.type){
         case EMPLOYEE_UPDATE:
             return {
